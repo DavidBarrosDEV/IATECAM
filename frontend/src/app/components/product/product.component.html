@@ -1,0 +1,35 @@
+<div class="geral">
+    <form>
+        <div class="form-group">
+            <label>Nome do Produto</label>
+            <input [(ngModel)]="this.name" class="form-control" >
+            <p>{{this.name}}</p>
+            <small id="emailHelp" class="form-text text-muted">Escreva o nome do produto para cadastro</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+    <div>
+        <form>
+
+        </form>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.name}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

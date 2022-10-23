@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { InitComponent } from './components/init/init.component';
 import { AboutComponent } from './components/about/about.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CategoryComponent } from './components/category/category.component';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InitComponent,
-    AboutComponent
+    AboutComponent,
+    CategoryComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
