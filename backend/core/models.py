@@ -19,6 +19,8 @@ class Category(models.Model):
         db_table='category'
         managed=True
 
+    def __str__(self):
+        return self.name
 
 class Product(models.Model):
     id = models.AutoField(
@@ -32,7 +34,7 @@ class Product(models.Model):
         db_column='tx_name'
     )
     category = models.ForeignKey(
-        to='Product',
+        to='Category',
         on_delete=models.DO_NOTHING,
         db_column='id_category',
         null=False,
