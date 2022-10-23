@@ -33,7 +33,14 @@ export class CategoryComponent implements OnInit {
     const payload = {
       "name": this.name
     }
-    this.http.post<Category>(this.baseUrl, payload).subscribe(() => window.location.reload()
+    this.http.post<Category>(this.baseUrl, payload).subscribe(
+        () => window.location.reload(),
+        error => {
+          const field = Object.keys(error.error)[0]
+          const message = (error.error[field])
+          const err = `${field}: ${message}`
+          window.alert(err)
+        }
     )
   }
 
