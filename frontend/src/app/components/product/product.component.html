@@ -2,12 +2,34 @@
     <form>
         <div class="form-group">
             <label>Nome do Produto</label>
-            <input [(ngModel)]="this.name" name="name" class="form-control" >
-            <p>{{this.name}}</p>
-            <small id="emailHelp" class="form-text text-muted">Escreva o nome do produto para cadastro</small>
+            <input [(ngModel)]="name" name="name" class="form-control">
+            <small class="form-text text-muted">Escreva o nome do produto para cadastro</small>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="form-group">
+                <label>Preco</label>
+                <input [(ngModel)]="price" name="price" class="form-control">
+                <small class="form-text text-muted">Escreva o preco do produto para cadastro</small>
+            </div>
+            <div class="form-group">
+                <label>Numero de Serie</label>
+                <input [(ngModel)]="serie" type="number" name="serie" class="form-control">
+                <small class="form-text text-muted">Escreva o numero de serie para cadastro</small>
+            </div>
+        </div>
+        <div>
+            <label>Categoria</label>
+            <select [(ngModel)]="category" name="category" class="form-control">
+                <option selected>-</option>
+                <option *ngFor="let category of this.categories" value="{{category.id}}">{{category.name}}</option>
+            </select>
+            <p>{{this.category}}</p>
+            <small class="form-text text-muted">Escreva o nome do produto para cadastro</small>
         </div>
 
-        <button type="submit" class="btn btn-primary">Salvar</button>
+
+
+        <button type="submit" class="btn btn-primary" (click)="saveProduct()">Salvar</button>
     </form>
 
     <div>
@@ -19,6 +41,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Preco</th>
+                <th scope="col">Serie</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Acao</th>
 
@@ -29,9 +53,10 @@
             <tr *ngFor="let product of products">
                 <th scope="row">{{product.id}}</th>
                 <td>{{product.name}}</td>
+                <td>R${{product.price}}</td>
+                <td>{{product.serie}}</td>
                 <td>{{product.category_name}}</td>
-                <td><button>Deletar</button></td>
-
+                <td><button class="btn btn-default" (click)="deleteProduct(product.id)"><img alt="trash-icon" src="assets/trash-icon.svg"></button></td>
             </tr>
             </tbody>
         </table>

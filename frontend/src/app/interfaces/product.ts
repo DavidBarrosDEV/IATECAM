@@ -1,8 +1,8 @@
 export interface Product {
-    id?:Number,
-    name: String,
-    price: Number,
-    serie: Number,
-    category: Number,
+    id:number,
+    name: string,
+    price: number,
+    serie: number,
+    category: number,
     category_name: string
 }

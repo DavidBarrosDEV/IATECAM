@@ -7,9 +7,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./init.component.scss']
 })
 export class InitComponent implements OnInit {
-    public teste: string;
+
   constructor(private router: Router) {
-      this.teste = ''
+
   }
 
   ngOnInit(): void {
