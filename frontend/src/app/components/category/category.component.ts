@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from "../../interfaces/category";
 import {HttpClient} from "@angular/common/http";
+import {Product} from "../../interfaces/product";
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -36,4 +37,11 @@ export class CategoryComponent implements OnInit {
     )
   }
 
+  public deleteCategory(id: number){
+    this.http.delete<Product>(this.baseUrl + id + '/').subscribe(
+        () => window.location.reload(),
+        () => window.alert('ERRO. Existem produtos referentes a essa categoria cadastrados')
+    )
+
+  }
 }

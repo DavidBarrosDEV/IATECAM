@@ -27,7 +27,7 @@
             <tr *ngFor="let category of categories">
                 <th scope="row">{{category.id}}</th>
                 <td>{{category.name}}</td>
-                <td><button>Deletar</button></td>
+                <td><button class="btn btn-default" (click)="deleteCategory(category.id)"><img alt="trash-icon" src="assets/trash-icon.svg"></button></td>
             </tr>
             </tbody>
         </table>
