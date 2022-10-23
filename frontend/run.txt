@@ -1,0 +1,12 @@
+Pre-requisitos:
+    - NodeJS 16
+    - Angular 14.2.6
+    - npm 8.19.2
+
+1) INSTALACAO DE DEPENDENCIAS
+Executar comando para instalacao das libs
+"npm install"
+
+
+2) RODAR APLICACAO FRONTEND
+"ng serve"
