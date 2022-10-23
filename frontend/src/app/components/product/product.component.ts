@@ -49,7 +49,14 @@ export class ProductComponent implements OnInit {
       "serie": this.serie,
       "category": this.category
     }
-    this.http.post<Product>(this.baseUrl + 'product/', payload).subscribe(() => window.location.reload()
+    this.http.post<Product>(this.baseUrl + 'product/', payload).subscribe(
+        () => window.location.reload(),
+        error => {
+          const field = Object.keys(error.error)[0]
+          const message = (error.error[field])
+          const err = `${field}: ${message}`
+          window.alert(err)
+        }
     )
   }
 
