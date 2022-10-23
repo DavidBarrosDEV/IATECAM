@@ -2,5 +2,7 @@ export interface Product {
     id?:Number,
     name: String,
     price: Number,
-    serie: Number
+    serie: Number,
+    category: Number,
+    category_name: string
 }

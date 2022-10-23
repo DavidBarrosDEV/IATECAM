@@ -7,7 +7,7 @@
                 Cadastro de categorias <br>
                 Listagem de categorias
             </p>
-            <a href="#" class="btn btn-primary">Acessar</a>
+            <a class="btn btn-primary" (click)="goToPage('category')">Acessar</a>
         </div>
     </div>
 
@@ -19,8 +19,11 @@
                 Cadastro de produtos <br>
                 Listagem de Produtos
             </p>
-            <a href="#" class="btn btn-primary">Acessar</a>
+            <a class="btn btn-primary" (click)="goToPage('product')">Acessar</a>
         </div>
     </div>
 
+    <input [(ngModel)]="teste">
+
+    <p>{{this.teste}}</p>
 </div>

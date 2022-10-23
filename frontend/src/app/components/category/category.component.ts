@@ -10,10 +10,12 @@ import {HttpClient} from "@angular/common/http";
 export class CategoryComponent implements OnInit {
   public baseUrl: string = 'http://localhost:8000/core/category/'
   public categories: Category[] = []
-  public name: string = ''
+  public name: string;
+  public teste: string;
 
   constructor(public http: HttpClient){
-
+    this.name = ''
+    this.teste = ''
   }
 
   ngOnInit(): void {
@@ -30,10 +32,8 @@ export class CategoryComponent implements OnInit {
     const payload = {
       "name": this.name
     }
-    this.http.post<Category>(this.baseUrl, payload).subscribe(
-
+    this.http.post<Category>(this.baseUrl, payload).subscribe(() => window.location.reload()
     )
   }
-
 
 }

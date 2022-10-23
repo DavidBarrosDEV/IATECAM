@@ -14,6 +14,7 @@ export class AppComponent {
   }
 
   public goToPage(path: string): void {
+
     this.router.navigate(['/', path])
         .then(nav => {
           console.log(nav); // true if navigation is successful

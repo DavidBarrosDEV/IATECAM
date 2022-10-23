@@ -2,7 +2,7 @@
     <form>
         <div class="form-group">
             <label>Nome do Produto</label>
-            <input [(ngModel)]="this.name" class="form-control" >
+            <input [(ngModel)]="this.name" name="name" class="form-control" >
             <p>{{this.name}}</p>
             <small id="emailHelp" class="form-text text-muted">Escreva o nome do produto para cadastro</small>
         </div>
@@ -19,6 +19,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Acao</th>
 
             </tr>
             </thead>
@@ -27,6 +29,9 @@
             <tr *ngFor="let product of products">
                 <th scope="row">{{product.id}}</th>
                 <td>{{product.name}}</td>
+                <td>{{product.category_name}}</td>
+                <td><button>Deletar</button></td>
+
             </tr>
             </tbody>
         </table>

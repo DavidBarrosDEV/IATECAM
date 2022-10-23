@@ -2,8 +2,7 @@
     <form>
         <div class="form-group">
             <label>Nome da Categoria</label>
-            <input [(ngModel)]="this.name" class="form-control">
-            <p>{{this.name}}</p>
+            <input [(ngModel)]="name" name="name" class="form-control">
             <small id="emailHelp" class="form-text text-muted">Escreva o nome da categoria para cadastro</small>
         </div>
 
@@ -19,6 +18,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Acao</th>
 
             </tr>
             </thead>
@@ -27,6 +27,7 @@
             <tr *ngFor="let category of categories">
                 <th scope="row">{{category.id}}</th>
                 <td>{{category.name}}</td>
+                <td><button>Deletar</button></td>
             </tr>
             </tbody>
         </table>
