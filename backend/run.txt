@@ -1,0 +1,26 @@
+Pre-requisitos:
+    - Docker e Docker-Compose
+    - Python 3.8 +
+    - Biblioteca Virtual Environment
+
+1) BANCO DE DADOS (MARIADB)
+Executar o comando "docker-compose up -d" para subir o container do MariaDB com as variaveis de ambiente de
+    - banco de dados
+    - senha
+    - usuario
+
+2) CONFIGURANDO AMBIENTE LINUX PARA FUNCIONAMENTO DO MYSQL DEVELOPMENT
+Ubuntu / Debian:
+    "sudo apt-get install python3-dev default-libmysqlclient-dev build-essential"
+ Red Hat / CentOS
+    "sudo yum install python3-devel mysql-devel"
+
+3) INSTALANDO DEPENDENCIAS
+Executar o comando PIP para instalacao das dependencias DENTRO DA Virtual Environment do projeto e bibliotecas do python:
+"pip install -r requirements.txt"
+
+4) EXECUTANDO MIGRACOES
+"python manage.py migrate"
+
+5) RODANDO APLICACAO
+"python manage.py runserver"
